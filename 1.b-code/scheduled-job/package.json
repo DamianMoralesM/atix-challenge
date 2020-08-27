@@ -1,0 +1,11 @@
+{
+  "name": "scheduled-job",
+  "version": "1.0.0",
+  "description": "Scheduled job to handle sensor's information in the database\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D calculation with \u001b[2~ \u001ddddddd\u001b[2~\u001b[2~d\u001b[\u001b[3~\u001b[3calculation with data stored in the data base",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

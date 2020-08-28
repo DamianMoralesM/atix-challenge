@@ -1,6 +1,6 @@
 const configs = {
-    S:9,
-    M:18
+    S:51,
+    M:51
 }
 
 exports.configs = configs

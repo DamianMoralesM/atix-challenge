@@ -20,7 +20,7 @@ Otros métodos se hereran, tal como **depositar()** , pero si hubiese un requeri
 
 
 ![uml](uml-cuenta.png)
-
+ 
 
 
 * Si cambiaría el diseño, exponga todo lo que cambiaría con un diagrama de clases de
@@ -57,7 +57,29 @@ Otros métodos se hereran, tal como **depositar()** , pero si hubiese un requeri
 ## 2. Aspectos conceptuales
 
 * A) Explique el uso del patrón Strategy. Una vez explicado, conteste: ¿Cuántas instancias necesita de cada clase de estrategia? ¿Hay algún otro patrón que lo ayude en esto? Si lo hay, muestre un pequeño ejemplo en código.
-* 1) Enumere todas las ventajas que conozca de escribir pruebas unitarias automatizadas antes de escribir el código funcional.
+
+Basicamente en base a una interface defino un método generico que luego dependiendo del contexto o estado ejecutará una implementación espefícica.
+Ejemplo:
+
+
+![example](https://www.tutorialspoint.com/design_pattern/images/strategy_pattern_uml_diagram.jpg)
+
+
+´´´
+public class StrategyPatternDemo {
+   public static void main(String[] args) {
+      Context context = new Context(new OperationAdd());		
+      System.out.println("10 + 5 = " + context.executeStrategy(10, 5));
+
+      context = new Context(new OperationSubstract());		
+      System.out.println("10 - 5 = " + context.executeStrategy(10, 5));
+
+      context = new Context(new OperationMultiply());		
+      System.out.println("10 * 5 = " + context.executeStrategy(10, 5));
+   }
+}
+´´´
+* 1 Enumere todas las ventajas que conozca de escribir pruebas unitarias automatizadas antes de escribir el código funcional.
  La práctica de TDD permite:
   1. Identificar si tengo todos los requerimientos para poder escribir código. Ej: Tengo el requerimiento de negocio de realizar el alta de usuarios pero no me dicen que datos tiene. Si defino un test que evalue si las propiedades fueron creadas correctamente me daré cuenta que no puedo porque me faltan datos.
   2. Al escribir todos los tests basados en mis requerimientos (los cuales están claros) me aseguro de implementar la funcionalidad correctamente.

@@ -17,3 +17,10 @@ UML. Si algún método debe cambiarlo mucho, escríbalo.
 ### B) Código.
 
 ## 2. Aspectos conceptuales
+
+* A) Explique el uso del patrón Strategy. Una vez explicado, conteste: ¿Cuántas instancias
+necesita de cada clase de estrategia? ¿Hay algún otro patrón que lo ayude en esto? Si lo
+hay, muestre un pequeño ejemplo en código.
+* 1) Enumere todas las ventajas que conozca de escribir pruebas unitarias automatizadas
+antes de escribir el código funcional.
+* B) ¿Cuándo utiliza el patrón Observador? ¿Qué ventajas tiene?

@@ -51,14 +51,18 @@ Otros métodos se hereran, tal como **depositar()** , pero si hubiese un requeri
 
 
 ### B) Código.
+ Revisar el directorio 1.b-code
+
 
 ## 2. Aspectos conceptuales
 
-* A) Explique el uso del patrón Strategy. Una vez explicado, conteste: ¿Cuántas instancias
-necesita de cada clase de estrategia? ¿Hay algún otro patrón que lo ayude en esto? Si lo
-hay, muestre un pequeño ejemplo en código.
-* 1) Enumere todas las ventajas que conozca de escribir pruebas unitarias automatizadas
-antes de escribir el código funcional.
+* A) Explique el uso del patrón Strategy. Una vez explicado, conteste: ¿Cuántas instancias necesita de cada clase de estrategia? ¿Hay algún otro patrón que lo ayude en esto? Si lo hay, muestre un pequeño ejemplo en código.
+* 1) Enumere todas las ventajas que conozca de escribir pruebas unitarias automatizadas antes de escribir el código funcional.
+ La práctica de TDD permite:
+  1. Identificar si tengo todos los requerimientos para poder escribir código. Ej: Tengo el requerimiento de negocio de realizar el alta de usuarios pero no me dicen que datos tiene. Si defino un test que evalue si las propiedades fueron creadas correctamente me daré cuenta que no puedo porque me faltan datos.
+  2. Al escribir todos los tests basados en mis requerimientos (los cuales están claros) me aseguro de implementar la funcionalidad correctamente.
+  3. Mi código escala ya que está planificado. Yo voy a definir las interfaces de los métodos sin concentrarme en como implementar, si comienzo a escribir sin planificar la interface puede que escriba un método con un output que no es que necesito.
+  
 * B) ¿Cuándo utiliza el patrón Observador? ¿Qué ventajas tiene?
 
 ## 3. Bases de datos y SQL

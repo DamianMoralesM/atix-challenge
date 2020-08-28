@@ -13,32 +13,40 @@ Si bien no hay un listado de requerimientos específicos, a priori uno podría p
 La cuenta corriente y la caja de ahorro tienen comportamiento distinto en algunos aspectos, se puede ver en el método extraer dónde tenemos qué preguntar por el descubierto. La cuenta corriente permite sobregiros, emisión de cheques, etc.
 Habría qué investigar el negocio en detalle, pero para qué escale yo separaría la lógica de cada tipo de cuenta utilizando herencia y no un flag. 
 Cambios:
-Herencia, entonces no hay qué controlar el tipo
+#### Herencia, entonces no hay qué controlar el tipo y escala mejor. Sino en cada método deberíamos preguntar por el tipo, lo que es poco mantenible y puede llevar a bugs.
+Ya con este simple cambio podemos ver que si necesitamos agregar el método **emitirEmitirCheque()** solo lo agregamos a cuenta corriente. No necesitamos preguntar por el tipo de cuenta ya que Cuenta Corriente tiene la resposabilidad y sabe como emitir un cheque.
+De la misma forma con extraer ya no hay que preguntar por el tipo, cada clase implementará **extraer()** con su propia lógica.
+Otros métodos se hereran, tal como **depositar()** , pero si hubiese un requerimiento de que caja de ahorro debe implementarlo de forma diferente cuenta corriente podemos agregar esa implementación a la clase correspondiente.
+
+
+![uml](uml-cuenta.png)
+
+
 
 * Si cambiaría el diseño, exponga todo lo que cambiaría con un diagrama de clases de
-UML. Si algún método debe cambiarlo mucho, escríbalo.
+ UML. Si algún método debe cambiarlo mucho, escríbalo.
 
 * ¿Es seguro hacer estos cambios? ¿Por qué? ¿Qué precauciones tomaría?
 
-Si el sistema ya está en producción coordínaría con el equipo de QA una regresión importante junto con un plan de testing. Si ya hay automation mucho mejor para detectar posibles fallas. Además si bien considero importante el cambio por la escalabilidad evaluaría el beneficio y valor que este cambio aporta antes de decidir implementarlo. No es lo mismo hacerlo para refactorizar que hacerlo porque el diseño actual causa muchos bugs o es muy dificil de cambiar.
+ Si el sistema ya está en producción coordínaría con el equipo de QA una regresión importante junto con un plan de testing. Si ya hay automation mucho mejor para detectar posibles fallas. Además si bien considero importante el cambio por la escalabilidad evaluaría el beneficio y valor que este cambio aporta antes de decidir implementarlo. No es lo mismo hacerlo para refactorizar que hacerlo porque el diseño actual causa muchos bugs o es muy dificil de cambiar.
 
 * ¿Agregaría getters y setters? ¿Cuáles? ¿Por qué?
 
-Ambos agregaría getters y setters.
-Si bien muchas propiedades se pueden setear por constructor, considero adecuador tener el respectivo setter.
-Los getters porque sino propiedades como saldo, descubiertoAcordado, titular, etc quedarían inaccesibles.
+ Ambos agregaría getters y setters.
+ Si bien muchas propiedades se pueden setear por constructor, considero adecuador tener el respectivo setter.
+ Los getters porque sino propiedades como saldo, descubiertoAcordado, titular, etc quedarían inaccesibles.
 
 * ¿Su solución usa algún patrón de diseño? ¿Cuál?
 
-No es este caso, pero se podría aplicar el patrón builder y tener una solución como la siguiente: 
+ No es este caso, pero se podría aplicar el patrón builder y tener una solución como la siguiente: 
 
-```
-Cuenta cuenta = new Cuenta.Builder(nroCuenta)
-            .titular("Paula")
-            .descubiertoAcordado(1000)
-            .saldo(100)
-            .build();
-```
+ ```
+ Cuenta cuenta = new Cuenta.Builder(nroCuenta)
+             .titular("Paula")
+             .descubiertoAcordado(1000)
+             .saldo(100)
+             .build();
+ ```
 
 
 

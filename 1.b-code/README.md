@@ -98,12 +98,14 @@ Precondition: Sensors sending values between 1 and 100.
 
 1. Check Average Bigger Than M
 M = 1 // set in the config file
+
 Expected Result = Average bigger that M, got an alert in the logs
 
 
 2. Difference between min and max is bigger Than S
 
 M = 1 // set in the config file
+
 Expected Result = Difference between min and max is bigger, got an alert in the logs
 
 

@@ -7,7 +7,7 @@
 
 ## Specific Solution 
 Basically we have the sensors sending data to the server. The server stores in the database and then a cron jobs process the data and made the calculations.
-![Monitor System](diagrams/monitor-system-implemented.png)
+![Monitor System](diagrams/monitor-system-implemented.jpg)
 
 ### Sensors
 

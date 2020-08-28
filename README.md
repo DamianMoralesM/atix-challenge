@@ -24,3 +24,21 @@ hay, muestre un pequeño ejemplo en código.
 * 1) Enumere todas las ventajas que conozca de escribir pruebas unitarias automatizadas
 antes de escribir el código funcional.
 * B) ¿Cuándo utiliza el patrón Observador? ¿Qué ventajas tiene?
+
+## 3. Bases de datos y SQL
+
+* A) Devuelva los usuarios cuyos nombre de persona empiecen por "Jorg"
+```
+SELECT Usuario.username,Usuario.id
+FROM Persona
+INNER JOIN Usuario
+ON Usuario.idUsuario=Persona.idUsuario
+WHERE Persona.nombre LIKE 'Jorg%'
+
+```
+* B) Devuelva los meses en los cuales la cantidad de usuarios que cumplen años es mayor a 10.
+```
+SELECT EXTRACT(MONTH FROM Persona.fechaNac) FROM Persona 
+GROUP BY (Persona.fechaNac) 
+HAVING  (COUNT(EXTRACT(MONTH FROM Persona.fechaNac)))  > 1
+```

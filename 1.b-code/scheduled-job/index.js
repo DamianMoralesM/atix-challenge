@@ -59,8 +59,8 @@ cron.schedule('*/30 * * * * * ', () => {
 
             const averageBiggerThanM = Utils.checkAverageBiggerThan(values, M);
             averageBiggerThanM && console.log(`Alert! Average bigger that ${M}`)
-            const differenceBiggerThatS = Utils.checkBiggerThanMinMaxDifference(values, S);
-            averageBiggerThanM && console.log(`Alert! Difference bigger that ${S}`)
+            const differenceBiggerThanS = Utils.checkBiggerThanMinMaxDifference(values, S);
+            differenceBiggerThanS && console.log(`Alert! Difference bigger that ${S}`);
             updateItems(ids);
         } else {
             console.log('No data to process')

@@ -29,32 +29,56 @@ As stated, we have software constrains and we can process data only 2 times in a
  
  We need this Global Packages:
 
-´´´npm install nodemon -g
-´´´
+```
+npm install nodemon -g
+```
 
-´´´npm install concurrently -g
-´´´
+```
+npm install concurrently -g
+```
 
 0. Clone repo 
-
+```
+git clone https://github.com/DamianMoralesM/atix-challenge.git
+```
+```
 cd 1.b-code
-
+```
 
 
 1. Install dependencies in Cron Job
+```
+cd scheduled-job && npm install
+```
 
 2. Install dependencies in Server
 
+```
+cd server && npm install
+```
+
 3. Install dependencies in Sensors
+```
+cd sensors && npm install
+```
 
 ## How to Test with the console
 
 
 1. Initalize Cron Job
+```
+nodemon index
+```
 
 2. Initialize Server
-
+```
+nodemon index
+```
 3. Initalize Sensors
+
+```
+concurrenlty "sensor1.js" "sensor2.js" "sensor3.js" "sensor4.js"
+```
 
 ### Tests
 

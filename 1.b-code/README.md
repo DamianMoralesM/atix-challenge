@@ -91,7 +91,7 @@ nodemon index
 #### 3. Initalize Sensors
 
 ```
-concurrently "sensor1.js" "sensor2.js" "sensor3.js" "sensor4.js"
+concurrently "node sensor1.js" "node sensor2.js" "node sensor3.js" "node sensor4.js"
 ```
 
 ### Tests

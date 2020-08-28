@@ -5,9 +5,9 @@
 ![Monitor System](diagrams/monitor-system.png)
 
 
-
 ## Specific Solution 
 Basically we have the sensors sending data to the server. The server stores in the database and then a cron jobs process the data and made the calculations.
+![Monitor System](diagrams/monitor-system-implemented.png)
 
 ### Sensors
 
@@ -90,23 +90,23 @@ nodemon index
 3. Initalize Sensors
 
 ```
-concurrenlty "sensor1.js" "sensor2.js" "sensor3.js" "sensor4.js"
+concurrently "sensor1.js" "sensor2.js" "sensor3.js" "sensor4.js"
 ```
 
 ### Tests
 Precondition: Sensors sending values between 1 and 100.
 
 1. Check Average Bigger Than M
-M = 1 // set in the config file
+    M = 1 // set in the config file
 
-Expected Result = Average bigger that M, got an alert in the logs
+    Expected Result = Average bigger that M, got an alert in the logs
 
 
 2. Difference between min and max is bigger Than S
 
-M = 1 // set in the config file
+    S = 1 // set in the config file
 
-Expected Result = Difference between min and max is bigger, got an alert in the logs
+    Expected Result = Difference between min and max is bigger, got an alert in the logs
 
 
 

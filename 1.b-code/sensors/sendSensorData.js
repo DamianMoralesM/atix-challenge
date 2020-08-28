@@ -6,7 +6,6 @@ function sendSensorData(sensorId, unit) {
     const host = 'http://localhost:3000';
     const url = `${host}/sensors/${sensorId}`;
     let data = {
-        unit,
         value: Math.floor(Math.random() * 100) + 1,
     };
 
@@ -19,7 +18,7 @@ function sendSensorData(sensorId, unit) {
     });
 
     setTimeout(()=>{
-        sendSensorData(sensorId, unit)
+        sendSensorData(sensorId)
     }, 2000);
 }
 

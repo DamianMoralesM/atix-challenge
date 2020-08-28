@@ -12,11 +12,7 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 const port = process.env.PORT || 3000;
 
-
-
 app.post('/sensors/:id', function (req, res) {
-
-    
 
     const value = req.body.value;
     const status = 'ready';
@@ -31,8 +27,6 @@ app.post('/sensors/:id', function (req, res) {
 
     console.log(`Data recieved: ${JSON.stringify(recordToBeStored)}`);
 
-
-
     MongoClient.connect("mongodb://localhost:27017/sensors", { useNewUrlParser: true }, function (err, db) {
 
         db.db("sensors").collection('sensors', function (err, collection) {
@@ -42,26 +36,18 @@ app.post('/sensors/:id', function (req, res) {
             ).then(result =>{
                 console.log('Record Inserted: ' + result.insertedId)
             }).catch((error)=>{
-                console.log(error)
+                console.log(error);
+                res.sendStatus(500);
             })
 
             db.close();
-            res.send('ok')
-
+            res.sendStatus(201);
         });
-
     });
 
 
-})
-
-app.get('/', (req, res) => {
-
-
-
-})
-
+});
 
 app.listen(port, () => {
     console.log(`API REST running`)
-})
+});

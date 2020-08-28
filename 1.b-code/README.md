@@ -11,7 +11,7 @@
 
 ### Scheduled Job
 
-## Instalation
+## Installation
 
 ## How to Test
 

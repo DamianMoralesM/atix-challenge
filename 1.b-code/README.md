@@ -60,9 +60,9 @@ As stated, we have software constrains and we can process data only 2 times in a
 
 
 #### 1. Install dependencies in Cron Job
-    ```
+```
     cd scheduled-job && npm install
-    ```
+```
 
 2. Install dependencies in Server
 

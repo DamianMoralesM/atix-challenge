@@ -104,5 +104,5 @@ WHERE Persona.nombre LIKE 'Jorg%'
 ```
 SELECT EXTRACT(MONTH FROM Persona.fechaNac) FROM Persona 
 GROUP BY (Persona.fechaNac) 
-HAVING  (COUNT(EXTRACT(MONTH FROM Persona.fechaNac)))  > 1
+HAVING  (COUNT(EXTRACT(MONTH FROM Persona.fechaNac)))  > 10
 ```

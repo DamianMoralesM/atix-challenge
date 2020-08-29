@@ -12,6 +12,7 @@ const getItems = async () => {
         useUnifiedTopology: true,
     });
     const db = client.db('sensors');
+    // get items ready to be processed in the ascending order so we capture in the order recieved in the server
     const items = await db.collection('sensors').find({ status: 'ready' }).sort({ created: 1 }).toArray();
 
     client.close();
@@ -58,9 +59,9 @@ cron.schedule('*/30 * * * * * ', () => {
             })
 
             const averageBiggerThanM = Utils.checkAverageBiggerThan(values, M);
-            averageBiggerThanM && console.log(`Alert! Average bigger that ${M}`)
+            averageBiggerThanM && console.log(`Alert! Average bigger than ${M}`)
             const differenceBiggerThanS = Utils.checkBiggerThanMinMaxDifference(values, S);
-            differenceBiggerThanS && console.log(`Alert! Difference bigger that ${S}`);
+            differenceBiggerThanS && console.log(`Alert! Difference between min and max bigger than ${S}`);
             updateItems(ids);
         } else {
             console.log('No data to process')

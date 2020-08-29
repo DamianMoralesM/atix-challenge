@@ -42,35 +42,34 @@ As stated, we have software constrains and we can process data only 2 times in a
  
 #### We need this Global Packages:
 
-    ```
+   
     npm install nodemon -g
-    ```
+   
 
-    ```
     npm install concurrently -g
-    ```
+    
 
 #### 0. Clone repo 
-    ```
+    
     git clone https://github.com/DamianMoralesM/atix-challenge.git
-    ```
-    ```
+    
+   
     cd 1.b-code
-    ```
+    
 
 
 #### 1. Install dependencies in Cron Job
 ```
-    cd scheduled-job && npm install
+cd scheduled-job && npm install
 ```
 
-2. Install dependencies in Server
+#### 2. Install dependencies in Server
 
 ```
 cd server && npm install
 ```
 
-3. Install dependencies in Sensors
+#### 3. Install dependencies in Sensors
 ```
 cd sensors && npm install
 ```
@@ -100,14 +99,14 @@ concurrently "node sensor1.js" "node sensor2.js" "node sensor3.js" "node sensor4
 #### 1. Check Average Bigger Than M
     M = 1 // set in the config file
 
-    Expected Result = Average bigger that M, got an alert in the logs
+    Expected Result = Average bigger that M, get an alert in the logs
 
 
 #### 2. Difference between min and max is bigger Than S
 
     S = 1 // set in the config file
 
-    Expected Result = Difference between min and max is bigger, got an alert in the logs
+    Expected Result = Difference between min and max is bigger, get an alert in the logs
 
 
 

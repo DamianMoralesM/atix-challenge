@@ -18,7 +18,7 @@ function sendSensorData(sensorId) {
 
     setTimeout(()=>{
         sendSensorData(sensorId)
-    }, 2000);
+    }, 500);
 }
 
 exports.sendSensorData = sendSensorData;

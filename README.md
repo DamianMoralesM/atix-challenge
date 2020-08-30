@@ -58,11 +58,31 @@ Otros métodos se hereran, tal como **depositar()** , pero si hubiese un requeri
 
 * Explique el uso del patrón Strategy. Una vez explicado, conteste: ¿Cuántas instancias necesita de cada clase de estrategia? ¿Hay algún otro patrón que lo ayude en esto? Si lo hay, muestre un pequeño ejemplo en código.
 
-Basicamente en base a una interface defino un método generico que luego dependiendo del contexto o estado ejecutará una implementación espefícica.
+El patrón de Strategy sugiere que tome una clase que haga algo específico de muchas maneras diferentes y extraiga todos estos algoritmos en clases separadas llamadas estrategias.
+
+
 Ejemplo:
 
 
 ![example](https://www.tutorialspoint.com/design_pattern/images/strategy_pattern_uml_diagram.jpg)
+
+La clase Context delega el trabajo a un objeto de Strategy en lugar de ejecutarlo por sí solo.
+
+```
+public class Context {
+   private Strategy strategy;
+
+   public Context(Strategy strategy){
+      this.strategy = strategy;
+   }
+
+   public int executeStrategy(int num1, int num2){
+      return strategy.doOperation(num1, num2);
+   }
+}
+```
+
+Context solo expone un método **executeStrategy** para activar el algoritmo encapsulado dentro de la estrategia seleccionada.
 
 
 ```
@@ -82,12 +102,25 @@ public class StrategyPatternDemo {
 Se necesita una instancia de cada estrategia.
 
 * Enumere todas las ventajas que conozca de escribir pruebas unitarias automatizadas antes de escribir el código funcional.
+
  La práctica de TDD permite:
   1. Identificar si tengo todos los requerimientos para poder escribir código. Ej: Tengo el requerimiento de negocio de realizar el alta de usuarios pero no me dicen que datos tiene. Si defino un test que evalue si las propiedades fueron creadas correctamente me daré cuenta que no puedo porque me faltan datos.
   2. Al escribir todos los tests basados en mis requerimientos (los cuales están claros) me aseguro de implementar la funcionalidad correctamente.
   3. Mi código escala ya que está planificado. Yo voy a definir las interfaces de los métodos sin concentrarme en como implementar, si comienzo a escribir sin planificar la interface puede que escriba un método con un output que no es que necesito.
   
 * ¿Cuándo utiliza el patrón Observador? ¿Qué ventajas tiene?
+
+ Este patrón permite definir un mecanismo de subscripción, en el que multiples objectos se subscriben y escuchan a los eventos que un objeto en particular podrían enviar en un momento dado. Tiene su analogía con un periodico al que los lectores se suscriben cuando quieren recibir noticias. 
+ 
+ Los objetos usuarios se suscriben explitamente:
+ ![observador](https://refactoring.guru/images/patterns/diagrams/observer/solution1-en.png)
+ 
+ Y en algún momento dado reciben mensajes del objeto al que se han subscripto:
+ ![observador](https://refactoring.guru/images/patterns/diagrams/observer/solution2-en.png)
+ 
+ Ventajas: 
+ * Solo reciben mensajes los objetos subscriptos, evitando hacer un broadcast y llegar a objetos que no necesitan el mensaje.
+ * Permite trabajar en tiempo real las subscripciones.
 
 ## 3. Bases de datos y SQL
 
